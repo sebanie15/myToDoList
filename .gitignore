@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# secret key
+/myToDoList/myToDoList/secret_key.py
+
+# idea
+/.idea/
