@@ -73,9 +73,17 @@ class CheckList(models.Model):
 
 
 class CheckListItem(models.Model):
-    title = models.CharField(max_length=100)
-    checklist = models.ForeignKey(CheckList)
-    order = models.IntegerField(default=1)
+    """
+    a class representing a checklist item
+    """
+    title = models.CharField(max_length=100, verbose_name=_('Title'))
+    checklist = models.ForeignKey(CheckList, verbose_name=_('Checklist'))
+    order = models.IntegerField(default=1, verbose_name=_('Order'))
+
+    class Meta:
+        verbose_name = _('Checklist item')
+        verbose_name_plural = _('Checklist items')
+        ordering = ('checklist', 'order')
 
 
 class AttachmentList(models.Model):
